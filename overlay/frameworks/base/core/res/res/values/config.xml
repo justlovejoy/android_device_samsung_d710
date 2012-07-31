@@ -311,7 +311,7 @@
     <bool name="config_disableMenuKeyInLockScreen">true</bool>
 	
     <!-- If this value is true, we handle Samsung CDMA's message ID method -->
-    <!-- <bool name="config_smsSamsungCdmaAlternateMessageIDEncoding">true</bool> -->
+    <bool name="config_smsSamsungCdmaAlternateMessageIDEncoding">true</bool>
 	
 	<!-- <integer name="config_deviceHardwareKeys">15</integer> -->
 	
