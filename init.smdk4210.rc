@@ -10,7 +10,7 @@ on early-init
     mkdir /efs 0771 radio system
     mkdir /preload 0771 system system
     mkdir /mnt/.lfs 0755 root root
-	export BOOTCLASSPATH /system/framework/core.jar:/system/framework/core-junit.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/apache-xml.jar:/system/framework/wimax_service.jar
+	export BOOTCLASSPATH /system/framework/core.jar:/system/framework/core-junit.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/framework2.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/apache-xml.jar:/system/framework/wimax_service.jar
 
     # for backwards compatibility
     symlink /storage/sdcard0 /sdcard
