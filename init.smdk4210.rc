@@ -1,4 +1,5 @@
 import init.smdk4210.usb.rc
+import init.gps.rc
 
 on early-init
     export EXTERNAL_STORAGE /storage/sdcard0
@@ -485,6 +486,12 @@ service gpsd /system/bin/gpsd
     class main
     user gps
     group system inet
+
+service gpsfix /system/bin/gpsfix
+    class main
+    user root
+    group root
+    oneshot
 
 # for bluetooth
 service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm --no2bytes --tosleep 50000 \

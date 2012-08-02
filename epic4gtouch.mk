@@ -147,6 +147,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
 	device/samsung/epic4gtouch/configs/gps.conf:system/etc/gps.conf \
 	device/samsung/epic4gtouch/configs/sirfgps.conf:system/etc/sirfgps.conf
+	device/samsung/epic4gtouch/gpsfix:system/bin/gpsfix
 
 # Packages
 PRODUCT_PACKAGES := \
