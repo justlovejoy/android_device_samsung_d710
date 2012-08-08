@@ -19,6 +19,7 @@ PRODUCT_COPY_FILES += \
 	device/samsung/epic4gtouch/lpm.rc:root/lpm.rc \
 	device/samsung/epic4gtouch/init.smdk4210.rc:root/init.smdk4210.rc \
 	device/samsung/epic4gtouch/init.smdk4210.usb.rc:root/init.smdk4210.usb.rc \
+	device/samsung/epic4gtouch/ueventd.rc:root/ueventd.rc \
 	device/samsung/epic4gtouch/ueventd.smdk4210.rc:root/ueventd.smdk4210.rc
 
 # These are the hardware-specific features
@@ -158,9 +159,7 @@ PRODUCT_PACKAGES := \
 	GalaxyS2Settings \
 	SamsungServiceMode \
 	libsurfaceflinger_client \
-	Torch \
-	Superuser \
-	su
+	Torch 
 	
 # Camera
 PRODUCT_PACKAGES += \
