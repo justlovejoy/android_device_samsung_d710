@@ -159,9 +159,9 @@ PRODUCT_PACKAGES := \
 	GalaxyS2Settings \
 	SamsungServiceMode \
 	libsurfaceflinger_client \
-	Torch \
-	su \
-	Superuser
+	Torch
+#	su \
+#	Superuser
 	
 # Camera
 PRODUCT_PACKAGES += \

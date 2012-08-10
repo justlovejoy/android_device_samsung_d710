@@ -40,7 +40,10 @@
 /dev/dpramerr              0660   radio      radio
 /dev/dpram0                0660   radio      radio
 /dev/dpram1                0660   radio      radio
+<<<<<<< HEAD
 /dev/dpram_dump            0660   radio      radio
+=======
+>>>>>>> 07e075a... Revert "overlays: remove Sprint Updates from settings menu until it's properly working"
 /dev/multipdp              0660   radio      radio
 
 # change here
