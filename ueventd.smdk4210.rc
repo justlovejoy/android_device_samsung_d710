@@ -43,7 +43,7 @@
 /dev/multipdp              0660   radio      radio
 
 # change here
-/dev/ttyEFS0              0660   radio      radio
+/dev/ttyEFS0               0660   radio      radio
 /dev/ttyCDMA0              0660   radio      radio
 /dev/ttyVTVD0              0660   radio      radio
 /dev/ttyVTAD0              0660   radio      radio
@@ -51,5 +51,5 @@
 /dev/ttyVTENT0             0660   radio      radio
 # <-------------------------------------------------------------
 #SISO Data Call Changes E
-/dev/uwibro               0660   system     system
-/dev/swmxctl              0660   system     system
+/dev/uwibro                0660   system     system
+/dev/swmxctl               0660   system     system
