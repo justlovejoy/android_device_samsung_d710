@@ -160,8 +160,8 @@ PRODUCT_PACKAGES := \
 	SamsungServiceMode \
 	libsurfaceflinger_client \
 	Torch
-#	su \
-#	Superuser
+	#su \
+	#Superuser
 	
 # Camera
 PRODUCT_PACKAGES += \
