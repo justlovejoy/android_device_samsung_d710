@@ -1,5 +1,5 @@
 #
-# system.prop for asop5000
+# system.prop for epic4gtouch
 #
 
 rild.libpath=/system/lib/libsec-ril40.so
