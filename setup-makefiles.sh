@@ -15,7 +15,7 @@
 # limitations under the License.
 
 DEVICE=d710
-COMMON=c1-common
+COMMON=d710
 MANUFACTURER=samsung
 
 mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE

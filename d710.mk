@@ -111,7 +111,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 # be reachable from resources or other mechanisms.
 PRODUCT_PROPERTY_OVERRIDES += \
        wifi.interface=wlan0 \
-       wifi.supplicant_scan_interval=15 \
+       wifi.supplicant_scan_interval=240 \
        ro.telephony.sends_barcount=1 \
        ro.ril.def.agps.mode=2 \
        ro.telephony.call_ring.multiple=false \
@@ -159,9 +159,9 @@ PRODUCT_PACKAGES := \
 	GalaxyS2Settings \
 	SamsungServiceMode \
 	libsurfaceflinger_client \
-	Torch
-	#su \
-	#Superuser
+	Torch \
+	su \
+	Superuser
 	
 # Camera
 PRODUCT_PACKAGES += \
@@ -198,16 +198,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.wimax.interface=uwbr0 \
-    net.tcp.buffersize.wimax=4096,524288,1048576,4096,16384,110208 \
+    net.tcp.buffersize.wimax=4096,87380,256960,4096,16384,256960 \
 	persist.service.usb.hubport=4
 	
-# TV OUT
-#PRODUCT_PACKAGES += \
-#	libhdmiclient
-#	libcec \
-#	libddc \
-#	libedid
-
 # MFC API
 PRODUCT_PACKAGES += \
     libsecmfcapi
@@ -215,7 +208,6 @@ PRODUCT_PACKAGES += \
 # Include exynos4 platform specific parts
 TARGET_HAL_PATH := hardware/samsung/exynos4/hal
 TARGET_OMX_PATH := hardware/samsung/exynos/multimedia/openmax
-$(call inherit-product, hardware/samsung/exynos4210.mk)
 
 PRODUCT_COPY_FILES += \
 	device/samsung/d710/configs/secomxregistry:system/etc/secomxregistry
@@ -258,6 +250,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+# enable repeatable keys in cwm
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.cwm.enable_key_repeat=true
+
 # Screen density is actually considered a locale (since it is taken into account
 # the the build-time selection of resources). The product definitions including
 # this file must pay attention to the fact that the first entry in the final
@@ -276,4 +272,5 @@ $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
 $(call inherit-product-if-exists, vendor/samsung/d710/d710-vendor.mk)
+$(call inherit-product-if-exists, vendor/common/common.mk)
 $(call inherit-product, hardware/samsung/exynos4210.mk)

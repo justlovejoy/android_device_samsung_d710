@@ -59,7 +59,6 @@ BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_CMDLINE := console=ttySAC2,115200 consoleblank=0
 
 # Kernel Config
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.4.3
 TARGET_KERNEL_SOURCE := kernel/samsung/smdk4210
 TARGET_KERNEL_CONFIG := cyanogenmod_d710_defconfig
 
@@ -114,7 +113,7 @@ BOARD_USES_MFC_FPS := true
 # Audio
 BOARD_USE_YAMAHAPLAYER := true
 BOARD_USE_SAMSUNG_SEPARATEDSTREAM := true
-#BOARD_HAS_SAMSUNG_VOLUME_BUG := true
+BOARD_HAS_SAMSUNG_VOLUME_BUG := true
 COMMON_GLOBAL_CFLAGS += -DICS_AUDIO_BLOB
 
 # Camera
@@ -173,7 +172,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/samsung/d710/include
 BOARD_SUPPRESS_EMMC_WIPE := true
 
 # assert
-TARGET_OTA_ASSERT_DEVICE := SPH-D710,d710
+TARGET_OTA_ASSERT_DEVICE := epic4gtouch,SPH-D710,d710
 
 # Use the non-open-source parts, if they're present
 -include vendor/samsung/d710/BoardConfigVendor.mk
