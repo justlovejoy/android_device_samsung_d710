@@ -40,13 +40,8 @@ public class DeviceSettings extends FragmentActivity {
     public static final String KEY_MDNIE_NEGATIVE = "mdnie_negative";
     public static final String KEY_MDNIE_OUTDOOR = "mdnie_outdoor";
     public static final String KEY_PANEL_GAMMA = "panel_gamma";
-<<<<<<< HEAD
-    public static final String KEY_USE_GYRO_CALIBRATION = "use_gyro_calibration";
-    public static final String KEY_CALIBRATE_GYRO = "calibrate_gyro";
-=======
     public static final String KEY_USE_ACCELEROMETER_CALIBRATION = "use_accelerometer_calibration";
     public static final String KEY_CALIBRATE_ACCELEROMETER = "calibrate_accelerometer";
->>>>>>> db2cef2... update from i9100 device settings
     public static final String KEY_TOUCHSCREEN_SENSITIVITY = "touchscreen_sensitivity";
     public static final String KEY_TOUCHKEY_LIGHT = "touchkey_light";
     public static final String KEY_TOUCHKEY_TIMEOUT = "touchkey_timeout";
