@@ -116,9 +116,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
        ro.ril.def.agps.mode=2 \
        ro.telephony.call_ring.multiple=false \
        ro.telephony.call_ring.delay=3000 \
-       ro.telephony.ril.v3=datacall \
-	   hwui.render_dirty_regions=false \
-	   hwui.disable_vsync=true
+       hwui.render_dirty_regions=false \
+       hwui.disable_vsync=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
        persist.sys.vold.switchexternal=1 \
