@@ -471,15 +471,9 @@ service iprenew_uwbr0 /system/bin/dhcpcd -n
 	
 service gpsd /system/bin/gpsd
     class main
-    user gps
+    user system
     group system inet
 	
-service gpsfix /system/bin/gpsfix
-    class main
-    user root
-    group root
-    oneshot
-
 service gpsfix /system/bin/gpsfix
     class main
     user root
