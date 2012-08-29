@@ -120,10 +120,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
        hwui.disable_vsync=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
-       persist.sys.vold.switchexternal=1 \
-	   persist.service.usb.setting=0 \
-	   persist.service.adb.enable=1 \
-	   persist.sys.usb.config=mass_storage,adb
+    ro.additionalmounts=/storage/sdcard1 \
+    ro.vold.switchablepair=/storage/sdcard0,/storage/sdcard1 \
+    persist.sys.vold.switchexternal=1 \
+    persist.service.usb.setting=0 \
+    persist.service.adb.enable=1 \
+    persist.sys.usb.config=mass_storage,adb
 	   
 # Telephony property for CDMA
 PRODUCT_PROPERTY_OVERRIDES += \
