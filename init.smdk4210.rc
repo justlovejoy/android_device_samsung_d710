@@ -403,15 +403,9 @@ on property:persist.service.usb.hubport=12
     write /sys/devices/platform/i2c-gpio.17/i2c-17/17-0008/port disable_cp
     write /sys/devices/platform/i2c-gpio.17/i2c-17/17-0008/port disable_ap
 on property:persist.service.usb.hubport=14
-<<<<<<< HEAD
     write /sys/devices/platform/i2c-gpio.17/i2c-17/17-0008/port disable_wimax
     write /sys/devices/platform/i2c-gpio.17/i2c-17/17-0008/port disable_cp
     write /sys/devices/platform/i2c-gpio.17/i2c-17/17-0008/port disable_ap
-=======
-	write /sys/devices/platform/i2c-gpio.17/i2c-17/17-0008/port disable_wimax
-	write /sys/devices/platform/i2c-gpio.17/i2c-17/17-0008/port disable_cp
-	write /sys/devices/platform/i2c-gpio.17/i2c-17/17-0008/port disable_ap
->>>>>>> 22ceec2cba461cdb4a1f6930581273d185e94c90
 
 #SISO Data Call Changes S
 service pppd_cdma /system/bin/pppd_runner

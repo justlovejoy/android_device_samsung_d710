@@ -189,11 +189,7 @@
         <item>"mobile_dun,4,0,3,60000,true"</item>
         <item>"mobile_hipri,5,0,3,60000,true"</item>
         <item>"mobile_bluetooth,7,7,1,-1,true"</item>
-<<<<<<< HEAD
 	<item>"wimax,6,6,1,-1,true"</item>
-=======
-		<item>"wimax,6,6,1,-1,true"</item>
->>>>>>> 22ceec2cba461cdb4a1f6930581273d185e94c90
         <item>"wifi_p2p,13,1,0,-1,true"</item>
     </string-array>
 
