@@ -5,22 +5,27 @@ on init
     export PATH /sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
+    export ANDROID_CACHE /cache
+    export SECONDARY_STORAGE /emmc
     export EXTERNAL_STORAGE /sdcard
 
     #symlink /system/etc /etc
 
+    mkdir /emmc
     mkdir /sdcard
-    mkdir /sdcard1
+    mkdir /usbdisk
     mkdir /system
     mkdir /data
     mkdir /cache
     mkdir /preload
-    mkdir /efs
-    mkdir /tmp
-    mkdir /mnt 0775 root root
-	mount /tmp /tmp tmpfs   
+    mount /tmp /tmp tmpfs
 
 on boot
+# Permissions for mDNIe
+    chown system media_rw /sys/class/mdnie/mdnie/mode
+    chown system media_rw /sys/class/mdnie/mdnie/outdoor
+    chown system media_rw /sys/class/mdnie/mdnie/scenario
+    write /sys/class/mdnie/mdnie/scenario 4
 
     ifup lo
     hostname localhost
@@ -31,6 +36,15 @@ on boot
 service ueventd /sbin/ueventd
     critical
 
+service console /sbin/sh
+    class core
+    console
+    disabled
+    group log
+    
+on property:ro.debuggable=1
+    start console
+
 service recovery /sbin/recovery
 
 service adbd /sbin/adbd recovery
@@ -39,7 +53,8 @@ service adbd /sbin/adbd recovery
 # Always start adbd on userdebug and eng builds
 on property:ro.debuggable=1
     setprop adb.recovery 1
-
+	
+# In recovery, always run adbd as root.
 on property:adb.recovery=1
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 04e8
@@ -50,6 +65,7 @@ on property:adb.recovery=1
     write /sys/class/android_usb/android0/iProduct $ro.product.model
     write /sys/class/android_usb/android0/iSerial $ro.serialno
     start adbd
+    setprop service.adb.root 1
 
 # Restart adbd so it can run as root
 on property:service.adb.root=1

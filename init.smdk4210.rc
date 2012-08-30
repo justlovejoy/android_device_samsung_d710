@@ -10,6 +10,7 @@ on early-init
     mkdir /storage/usbdisk0 0775 system system
     mkdir /efs 0771 radio system
     mkdir /preload 0771 system system
+	mkdir /mnt 0775 root system
     mkdir /mnt/.lfs 0755 root root
 
     # for backwards compatibility
@@ -354,7 +355,7 @@ on boot
     setprop status.battery.level_raw  50
     setprop status.battery.level_scale 9
 	
-    setprop net.tcp.buffersize.wimax   4096,524288,1048576,4096,16384,110208
+    setprop net.tcp.buffersize.wimax   4096,87380,256960,4096,16384,256960
 	
 # +++++++++++++++++++++++++++++++++++++++++++
 # for datarouter
@@ -402,9 +403,15 @@ on property:persist.service.usb.hubport=12
     write /sys/devices/platform/i2c-gpio.17/i2c-17/17-0008/port disable_cp
     write /sys/devices/platform/i2c-gpio.17/i2c-17/17-0008/port disable_ap
 on property:persist.service.usb.hubport=14
+<<<<<<< HEAD
     write /sys/devices/platform/i2c-gpio.17/i2c-17/17-0008/port disable_wimax
     write /sys/devices/platform/i2c-gpio.17/i2c-17/17-0008/port disable_cp
     write /sys/devices/platform/i2c-gpio.17/i2c-17/17-0008/port disable_ap
+=======
+	write /sys/devices/platform/i2c-gpio.17/i2c-17/17-0008/port disable_wimax
+	write /sys/devices/platform/i2c-gpio.17/i2c-17/17-0008/port disable_cp
+	write /sys/devices/platform/i2c-gpio.17/i2c-17/17-0008/port disable_ap
+>>>>>>> 22ceec2cba461cdb4a1f6930581273d185e94c90
 
 #SISO Data Call Changes S
 service pppd_cdma /system/bin/pppd_runner
@@ -472,6 +479,12 @@ service gpsd /system/bin/gpsd
     class main
     user gps
     group system inet
+	
+service gpsfix /system/bin/gpsfix
+    class main
+    user root
+    group root
+    oneshot
 
 service gpsfix /system/bin/gpsfix
     class main
