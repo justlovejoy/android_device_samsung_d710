@@ -159,7 +159,8 @@ PRODUCT_PACKAGES := \
     smdk4210_hdcp_keys \
     GalaxyS2Settings \
     SamsungServiceMode \
-    libsurfaceflinger_client
+    libsurfaceflinger_client \
+    Torch
 	
 # Camera
 PRODUCT_PACKAGES += \
