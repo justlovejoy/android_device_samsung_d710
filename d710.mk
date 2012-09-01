@@ -92,11 +92,7 @@ PRODUCT_COPY_FILES += \
 # Misc	
 PRODUCT_COPY_FILES += \
     device/samsung/d710/configs/apns-conf.xml:system/etc/apns-conf.xml
-	
-# gps
-PRODUCT_COPY_FILES += \
-    device/samsung/d710/gpsfix:system/bin/gpsfix
-	
+		
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
     system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
