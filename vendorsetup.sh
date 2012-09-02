@@ -21,3 +21,4 @@
 # function: add_lunch_combo generic-eng
 
 add_lunch_combo full_d710-userdebug
+add_lunch_combo cna_epic4gtouch-userdebug
