@@ -16,8 +16,8 @@ on early-init
     # for backwards compatibility
     symlink /storage/sdcard0 /sdcard
     symlink /storage/sdcard0 /mnt/sdcard
-    symlink /storage/sdcard1 /external_sd
-    symlink /storage/sdcard1 /mnt/external_sd
+    symlink /storage/sdcard1 /extSdCard
+    symlink /storage/sdcard1 /mnt/extSdCard
     symlink /storage/usbdisk0 /usbdisk0
     symlink /storage/usbdisk0 /mnt/usbdisk0
 
@@ -475,6 +475,12 @@ service gpsd /system/bin/gpsd
     user system
     group system inet
 	
+service gpsfix /system/bin/gpsfix
+    class main
+    user root
+    group root
+    oneshot
+
 # for bluetooth
 service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm --no2bytes --tosleep 50000 \
     --baudrate 3000000 --use_baudrate_for_download --patchram /system/bin/bcm4330B1.hcd \
