@@ -22,7 +22,7 @@ $(call inherit-product-if-exists, device/samsung/d710/full_d710.mk)
 $(call inherit-product, vendor/carbon/config/common_cdma.mk)
 
 # phone
-$(call inherit-product, vendor/carbon/config/common_phone.mk)
+$(call inherit-product, vendor/carbon/config/common_sgs.mk)
 
 # products
 PRODUCT_NAME := carbon_d710
