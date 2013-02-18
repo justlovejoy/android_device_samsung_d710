@@ -24,10 +24,14 @@ $(call inherit-product, vendor/carbon/config/common_cdma.mk)
 # phone
 $(call inherit-product, vendor/carbon/config/common_sgs.mk)
 
+# Bootanimation
+TARGET_SCREEN_HEIGHT := 800
+TARGET_SCREEN_WIDTH := 480
+
 # products
 PRODUCT_NAME := carbon_d710
 PRODUCT_DEVICE := d710
-PRODUCT_BRAND := samsung
+PRODUCT_BRAND := Samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := SPH-D710
 PRODUCT_PROPERTY_OVERRIDES += ro.buildzipid=carbon.d710.$(shell date +%m%d%y).$(shell date +%H%M%S)
